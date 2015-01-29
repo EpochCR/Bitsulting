@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}
+    home
+{% endblock %}
+{% block headtitle %}
+    <a style="a:hover{text-decoration: underline;}text-decoration: underline;color:black;" href="/">bitsulting</a>
+{% endblock %}
+{% block bodycontent %}
+    {% if question %}
+        <ol class="list-group">
+        {% for questions in question %}
+            <li class="list-group-item"><a href="{{ questions.get_absolute_url }}"> {{ questions.title }}</a> - {{ questions.reward_value }} BTC
+                <div style="font-size:xx-small;">on {{ questions.posted }} in <a href="{{ questions.category.get_absolute_url }}">/c/{{ questions.category }} </a></div>
+                <div style="font-size:x-small;">{{ questions.body|slice:":128" }}...</div>
+            </li>
+        {% endfor %}
+        </ol>
+    {% else %}
+        <p>There are no questions.</p>
+    {% endif %}
+{% endblock %}

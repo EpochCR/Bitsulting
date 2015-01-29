@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+        <title>bitsulting - {% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="http://bootswatch.com/united/bootstrap.min.css">
+    </head>
+    <body>
+    <div class="navbar navbar-default">
+      <div class="navbar-header">
+        <div style="float:left;padding-left:10px;padding-right:10px;padding-top:5px;padding-bottom:5px;font-size:xx-large;">{% block headtitle %}{% endblock %}</div>
+      </div>
+        <div style="float:right;padding-left:10px;padding-right:10px;padding-top:5px;padding-bottom:5px;font-size:xx-large;">+ new</div>
+    </div>
+        {% block bodycontent %}
+        {% endblock %}
+    </body>
+<footer>
+  <p align="center" style="font-size:small;">contact: <a href="mailto:juju@protonmail.ch">juju@protonmail.ch</a></p>
+  <p align="center" style="font-size:small;"><a href="http://baysidebitcoin.com">Bayside Bitcoin</a> </p>
+</footer>
+</html>
