@@ -3,7 +3,6 @@
 <head lang="en">
     <meta charset="UTF-8">
         <title>bitsulting - {% block title %}{% endblock %}</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/css" href="http://bootswatch.com/united/bootstrap.min.css">
     </head>
     <body>
@@ -11,8 +10,20 @@
       <div class="navbar-header">
         <div style="float:left;padding-left:10px;padding-right:10px;padding-top:5px;padding-bottom:5px;font-size:xx-large;">{% block headtitle %}{% endblock %}</div>
       </div>
-        <div style="float:right;padding-left:10px;padding-right:10px;padding-top:5px;padding-bottom:5px;font-size:xx-large;">+ new</div>
+        <div style="float:right;padding-left:10px;padding-right:10px;padding-top:5px;font-size:xx-large;">+ new</div>
+        <div style="float:left;padding-left:10px;padding-right:10px;padding-bottom:5px;width:100%;">
+            {% if toplist %}
+                {% for categories in toplist %}
+                    {% if forloop.last or forloop.first %}
+                    {% else %}
+                        -
+                    {% endif %}
+                    <a style="a:hover{text-decoration: underline;}text-decoration: underline;color:black;" href="{{ categories.get_absolute_url }}"> {{ categories.title }} </a>
+                {% endfor %}
+            {%  endif %}
+        </div>
     </div>
+
         {% block bodycontent %}
         {% endblock %}
     </body>

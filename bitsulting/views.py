@@ -54,4 +54,4 @@ def view_category(request, slug):
 def new_home(request):
         # Like before, get the request's context.
     context = RequestContext(request)
-    return render(request, 'home.html', {'question': Question.objects.all()[:12]})
+    return render(request, 'home.html', {'question': Question.objects.all()[:12],'toplist': Category.objects.all()[:15]})
