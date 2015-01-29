@@ -5,5 +5,7 @@ Bitsulting start, ask and answer questions anonymously and earn Bitcoins
 - Quality Assurance - Cody Voinovich
 
 ![Home](http://i.imgur.com/icjB5tw.png)
+
 ![Question](http://i.imgur.com/JVEYg04.png)
+
 ![Category](http://i.imgur.com/6zqHlLb.png)
